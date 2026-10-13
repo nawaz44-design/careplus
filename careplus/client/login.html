@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarePlus — Sign in</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body class="login-body">
+  <div class="login-wrap">
+    <aside class="login-hero">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M9 2h6v7h7v6h-7v7H9v-7H2V9h7z" fill="currentColor"/></svg>
+        </span>
+        <span class="brand-name">CarePlus</span>
+        <span class="brand-sub"></span>
+      </div>
+
+      <h1></h1>
+      <p class="hero-lead">Role-based medicine availability &amp; transfer coordination between centres, PHCs and stockholders.</p>
+
+      <blockquote class="hero-quote">
+        “The system must recommend transfers between centres, not only reorders from the district.
+        When one centre is running short and another has surplus, the system must propose the
+        transfer and show its effect on both.”
+      </blockquote>
+
+      <ul class="hero-roles">
+        <li><b>Customer</b><span>Search nearby availability, upload a prescription, send requests and track status.</span></li>
+        <li><b>Pharmacist (PHC)</b><span>Respond to customers, forecast shortages, approve centre transfers, raise supply requests.</span></li>
+        <li><b>Stockholder</b><span>Fulfil authorised PHC supply requests and share delivery / dispatch updates.</span></li>
+      </ul>
+    </aside>
+
+    <main class="login-panel">
+      <div class="login-card">
+        <h2>Sign in</h2>
+        <p class="modal-sub">Choose your role, then enter your credentials.</p>
+
+        <div class="role-tabs" id="loginRoleTabs" role="tablist">
+          <button type="button" data-role="customer" class="is-active">Customer</button>
+          <button type="button" data-role="phc">Pharmacist (PHC)</button>
+          <button type="button" data-role="stockholder">Stockholder</button>
+        </div>
+
+        <div class="role-blurb" id="roleBlurb"></div>
+
+        <form id="loginForm" novalidate>
+          <label class="field" id="assignedWrap" hidden>
+            <span id="assignedLabel">Assigned centre</span>
+            <select id="assignedSel"></select>
+          </label>
+
+          <label class="field">
+            <span>Username</span>
+            <input id="username" name="username" autocomplete="username" placeholder="your username" />
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="••••••••" />
+          </label>
+
+          <div class="login-error" id="loginError" hidden></div>
+
+          <button class="btn" type="submit" id="loginBtn" style="width:100%">Sign in</button>
+        </form>
+
+        <div class="demo">
+          <div class="hint">Demo accounts — click to fill:</div>
+          <div class="demo-chips" id="demoChips"></div>
+        </div>
+
+        <p class="hint mt-16" id="registerHint">
+          Pharmacist or stockholder? <a href="register.html">Register your shop &amp; license number</a>
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <script src="../shared/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

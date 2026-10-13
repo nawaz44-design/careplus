@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarePlus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M9 2h6v7h7v6h-7v7H9v-7H2V9h7z" fill="currentColor"/></svg>
+      </span>
+      <span class="brand-name">CarePlus</span>
+      <span class="brand-sub"></span>
+    </div>
+
+    <div class="topbar-meta" id="topbarMeta"></div>
+  </header>
+
+  <section class="banner">
+    <div class="banner-inner">
+      <span class="banner-tag">Core rule</span>
+      <p class="banner-text">
+        The system must recommend transfers between centres, not only reorders from the district.
+        When one centre is running short and another has surplus, the system must propose the
+        transfer and show its effect on both.
+      </p>
+    </div>
+  </section>
+
+  <main id="app" class="app"></main>
+
+  <footer class="footer">
+    <div>CarePlus ·role-based medicine availability &amp; transfer coordination</div>
+    <div id="footNote" class="footer-note"></div>
+  </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <script src="../shared/data.js"></script>
+  <script src="../shared/engine.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/nearme.js"></script>
+</body>
+</html>

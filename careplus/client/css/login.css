@@ -1,0 +1,183 @@
+/* Login page styles — CarePlus (white + light green) */
+
+body.login-body {
+  background:
+    radial-gradient(1200px 600px at 100% -10%, var(--green-100), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, var(--green-100), transparent 55%),
+    var(--green-50);
+  display: block;
+}
+
+.login-wrap {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+}
+
+/* ---------- Hero side ---------- */
+.login-hero {
+  position: relative;
+  padding: 40px 46px;
+  background: linear-gradient(160deg, var(--green-700), var(--green-500));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow: hidden;
+}
+.login-hero::after {
+  content: "";
+  position: absolute;
+  right: -120px; bottom: -140px;
+  width: 380px; height: 380px; border-radius: 50%;
+  background: rgba(255, 255, 255, .08);
+}
+.login-hero .brand-name { color: #fff; }
+.login-hero .brand-sub { background: rgba(255, 255, 255, .18); color: #fff; }
+.login-hero .brand-mark { background: rgba(255, 255, 255, .18); color: #fff; }
+
+.login-hero h1 {
+  font-size: 34px;
+  margin: 12px 0 0;
+  letter-spacing: -.02em;
+  position: relative;
+  z-index: 1;
+}
+.hero-lead {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  opacity: .95;
+  max-width: 460px;
+  position: relative;
+  z-index: 1;
+}
+.hero-quote {
+  margin: 6px 0 0;
+  padding: 16px 18px;
+  border-left: 4px solid rgba(255, 255, 255, .7);
+  background: rgba(255, 255, 255, .12);
+  border-radius: 0 12px 12px 0;
+  font-size: 14px;
+  line-height: 1.55;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+.hero-roles {
+  list-style: none;
+  margin: auto 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+.hero-roles li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 16px;
+  border-left: 2px solid rgba(255, 255, 255, .35);
+}
+.hero-roles b { font-size: 14.5px; }
+.hero-roles span { font-size: 13px; opacity: .88; line-height: 1.45; }
+
+/* ---------- Panel side ---------- */
+.login-panel {
+  display: grid;
+  place-items: center;
+  padding: 40px 26px;
+}
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow-md);
+  padding: 28px;
+}
+.login-card h2 { margin: 0 0 4px; font-size: 22px; }
+
+.role-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--green-100);
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  margin: 16px 0 12px;
+}
+.role-tabs button {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  color: var(--green-700);
+  font-family: inherit;
+  font-weight: 650;
+  font-size: 13px;
+  padding: 9px 6px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all .15s ease;
+  white-space: nowrap;
+}
+.role-tabs button:hover { color: var(--green-900); }
+.role-tabs button.is-active {
+  background: var(--white);
+  color: var(--green-700);
+  box-shadow: var(--shadow-sm);
+}
+
+.role-blurb {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  background: var(--green-50);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  line-height: 1.45;
+}
+
+#assignedWrap[hidden] { display: none; }
+
+.login-error {
+  background: var(--red-bg);
+  border: 1px solid var(--red-line);
+  color: var(--red-ink);
+  font-size: 13px;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+.demo {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line-strong);
+}
+.demo-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.login-card a { color: var(--green-700); font-weight: 650; text-decoration: none; }
+.login-card a:hover { text-decoration: underline; }
+
+.demo-chip {
+  border: 1px solid var(--line-strong);
+  background: var(--white);
+  color: var(--green-700);
+  border-radius: var(--radius-pill);
+  padding: 5px 11px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .14s ease;
+}
+.demo-chip:hover { background: var(--green-100); border-color: var(--green-400); }
+
+@media (max-width: 860px) {
+  .login-wrap { grid-template-columns: 1fr; }
+  .login-hero { padding: 30px 26px; }
+  .login-hero h1 { font-size: 27px; }
+}

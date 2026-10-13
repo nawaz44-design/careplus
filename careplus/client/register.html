@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarePlus — Register</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body class="login-body">
+  <div class="login-wrap">
+    <aside class="login-hero">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M9 2h6v7h7v6h-7v7H9v-7H2V9h7z" fill="currentColor"/></svg>
+        </span>
+        <span class="brand-name">CarePlus</span>
+        <span class="brand-sub"></span>
+      </div>
+
+      <h1>Register your shop</h1>
+      <p class="hero-lead">Onboarding for pharmacies (PHCs) and stockholders. Your shop license number is verified before your role is activated.</p>
+
+      <blockquote class="hero-quote">
+        “The system must recommend transfers between centres, not only reorders from the district.
+        When one centre is running short and another has surplus, the system must propose the
+        transfer and show its effect on both.”
+      </blockquote>
+
+      <ul class="hero-roles">
+        <li><b>Pharmacist (PHC)</b><span>Register with your shop license number and official email, then operate your centre console.</span></li>
+        <li><b>Stockholder</b><span>Register with your distribution license to receive authorised PHC supply requests.</span></li>
+      </ul>
+    </aside>
+
+    <main class="login-panel">
+      <div class="login-card">
+        <h2>Create an account</h2>
+        <p class="modal-sub">For pharmacists (PHC) and stockholders only.</p>
+
+        <div class="role-tabs" id="regRoleTabs" role="tablist">
+          <button type="button" data-role="phc" class="is-active">Pharmacist (PHC)</button>
+          <button type="button" data-role="stockholder">Stockholder</button>
+        </div>
+
+        <div class="role-blurb" id="regBlurb"></div>
+
+        <form id="regForm" novalidate>
+          <label class="field">
+            <span>Full name (contact person)</span>
+            <input id="regName" autocomplete="name" placeholder="e.g. Dr. A. Menon" />
+          </label>
+
+          <label class="field">
+            <span id="shopLabel">Shop / centre name</span>
+            <input id="regShop" placeholder="e.g. Green Valley PHC" />
+          </label>
+
+          <label class="field">
+            <span id="licLabel">Shop license number</span>
+            <input id="regLicence" placeholder="e.g. DL-PHC-2026-00987" />
+            <div class="hint mt-8" id="licHint">Drug licence / registration number of the shop.</div>
+          </label>
+
+          <label class="field">
+            <span>Official email</span>
+            <input id="regEmail" type="email" autocomplete="email" placeholder="name@example.com" />
+          </label>
+
+          <label class="field">
+            <span>Phone</span>
+            <input id="regPhone" autocomplete="tel" placeholder="+91 90000 00000" />
+          </label>
+
+          <label class="field">
+            <span id="assignLabel">Centre you operate</span>
+            <select id="regAssign"></select>
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <input id="regPassword" type="password" autocomplete="new-password" placeholder="min. 6 characters" />
+          </label>
+
+          <label class="field">
+            <span>Confirm password</span>
+            <input id="regConfirm" type="password" autocomplete="new-password" placeholder="re-enter password" />
+          </label>
+
+          <div class="login-error" id="regError" hidden></div>
+
+          <button class="btn" type="submit" style="width:100%">Create account &amp; sign in</button>
+        </form>
+
+        <p class="hint mt-16">Already registered? <a href="login.html">Sign in</a></p>
+      </div>
+    </main>
+  </div>
+
+  <script src="../shared/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>
